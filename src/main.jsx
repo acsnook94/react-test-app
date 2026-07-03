@@ -11,6 +11,8 @@ import { createRoot } from 'react-dom/client'
 
 import '@vitejs/plugin-react/preamble';
 import Car from './Car.jsx';
+import Garage from './Garage.jsx';
+import {Parent} from './Family.jsx';
 // import Model from './Model.jsx';
 
 
@@ -82,5 +84,7 @@ createRoot(document.getElementById('root')).render(
   // myElement
   // myElement2
   // <Car />
-  <Car color="blue" />
+  // <Car color="blue" />
+  // <Garage />
+  <Parent />
 )  

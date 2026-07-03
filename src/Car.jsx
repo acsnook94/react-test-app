@@ -31,16 +31,25 @@ import React from "react";
 // }
 
 
-
 // export default function Car(){
 //   return(
 //     <h2>Hi, I am a Car!</h2>
 //   );
 // }
 
-function Car(props){
+
+// function Car(props){
+// function Car({color, brand}){ //param destructuring
+function Car({color="white", brand, ...others}){ //param destructure with default color value set, indeterminate # of params
+    // const {color, brand} = props; //destructure to get only desired props
+
     return(
-        <h2>Hi, I'm a {props.color} Car!</h2>
+        <>
+            {/* <h2>Hi, I'm a {props.color!=null ? (props.color + "colored ") : ""} Car!</h2>
+            <h3>My brand is {props.brand}.</h3> */}
+            <h2>Hi, I'm a {color!=null ? (color + " colored") : ""} Car!</h2>
+            <h3>My brand is {brand}. My make is {others.make} and my model name is {others.model}.</h3>
+        </>
     );
 }
 
