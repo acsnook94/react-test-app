@@ -12,7 +12,9 @@ import { createRoot } from 'react-dom/client'
 import '@vitejs/plugin-react/preamble';
 import Car from './Car.jsx';
 import Garage from './Garage.jsx';
-import {Parent} from './Family.jsx';
+import { Parent } from './family.jsx';
+import { Football } from './Football.jsx';
+import { Goal } from './goals.jsx';
 // import Model from './Model.jsx';
 
 
@@ -36,12 +38,12 @@ import {Parent} from './Family.jsx';
 // const myElement = <h1>I Like JSX!</h1>;
 // const myElement = <h1>I Like {str}!</h1>;
 
-const myElement = (
-  <>
-    <p>I am a paragraph.</p>
-    <p>I am a paragraph too.</p>
-  </>
-);
+// const myElement = (
+//   <>
+//     <p>I am a paragraph.</p>
+//     <p>I am a paragraph too.</p>
+//   </>
+// );
 
 // const myElement2 = <p className='uselessClass'>This is MyElement2</p>;
 
@@ -70,12 +72,12 @@ const myElement = (
 // const myCarModel = new Model("Ford", "Mustang");
 // myCarModel.show();
 
-
 // function Car(){
 //   return(
 //     <h2>Hi, I am a Car!</h2>
 //   )
 // }
+
 
 createRoot(document.getElementById('root')).render(
   // <h1>Hello React!</h1>
@@ -85,6 +87,8 @@ createRoot(document.getElementById('root')).render(
   // myElement2
   // <Car />
   // <Car color="blue" />
-  // <Garage />
-  <Parent />
-)  
+  <Garage />
+  // <Parent/>
+  // <Football/>
+  // <Goal isGoal={true}/>
+); 
