@@ -16,7 +16,8 @@ import { Parent } from './family.jsx';
 import { Football } from './Football.jsx';
 import { Goal } from './goals.jsx';
 import MyForm from './MyForm.jsx';
-// import Model from './Model.jsx';
+import { ModalTestPage } from './PortalModal.jsx';
+import { BtnTestPage } from './PortalButton.jsx';
 
 
 // const myelement = (
@@ -39,6 +40,7 @@ import MyForm from './MyForm.jsx';
 // const myElement = <h1>I Like JSX!</h1>;
 // const myElement = <h1>I Like {str}!</h1>;
 
+
 // const myElement = (
 //   <>
 //     <p>I am a paragraph.</p>
@@ -46,7 +48,9 @@ import MyForm from './MyForm.jsx';
 //   </>
 // );
 
+
 // const myElement2 = <p className='uselessClass'>This is MyElement2</p>;
+
 
 // class Car {
 //   constructor(name) {
@@ -58,6 +62,7 @@ import MyForm from './MyForm.jsx';
 //   }
 // }
 
+
 // class Model extends Car{
 //   constructor(name,mod){
 //     super(name);
@@ -68,16 +73,19 @@ import MyForm from './MyForm.jsx';
 //   }
 // }
 
+
 // const myCar = new Car("Chevrolet");
 // myCar.present();
 // const myCarModel = new Model("Ford", "Mustang");
 // myCarModel.show();
+
 
 // function Car(){
 //   return(
 //     <h2>Hi, I am a Car!</h2>
 //   )
 // }
+
 
 function MyCars(){
   // const cars = ['Ford', 'BMW', 'Audi'];
@@ -115,5 +123,7 @@ createRoot(document.getElementById('root')).render(
   // <Football/>
   // <Goal isGoal={true}/>
   // <MyCars/>
-  <MyForm/>
+  // <MyForm/>
+  // <ModalTestPage/>
+  <BtnTestPage/>
 ); 
