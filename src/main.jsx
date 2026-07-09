@@ -15,6 +15,7 @@ import Garage from './Garage.jsx';
 import { Parent } from './family.jsx';
 import { Football } from './Football.jsx';
 import { Goal } from './goals.jsx';
+import MyForm from './MyForm.jsx';
 // import Model from './Model.jsx';
 
 
@@ -78,6 +79,28 @@ import { Goal } from './goals.jsx';
 //   )
 // }
 
+function MyCars(){
+  // const cars = ['Ford', 'BMW', 'Audi'];
+  // const cars = [['Ford', 0], ['BMW', 1], ['Audi', 2]];
+  const cars = [
+    {brand: 'Ford', id: 1000}, 
+    {brand: 'BMW', id: 1001}, 
+    {brand: 'Audi', id: 1002}
+  ];
+
+  return(
+    <>
+      <h1>My Cars:</h1>
+      <ul>
+        {/* {cars.map((car)=><li>I am a {car[0]}</li>)} */}
+        {/* {cars.map((car, index)=><li key={index}>I am a {car}</li>)} */}
+        {/* {cars.map((car)=><li key={car[1]}>I am a {car[0]}</li>)} */}
+        {cars.map((car)=><li key={car.id}>I am a {car.brand}</li>)}
+      </ul>
+    </>
+  );
+}
+
 
 createRoot(document.getElementById('root')).render(
   // <h1>Hello React!</h1>
@@ -87,8 +110,10 @@ createRoot(document.getElementById('root')).render(
   // myElement2
   // <Car />
   // <Car color="blue" />
-  <Garage />
+  // <Garage />
   // <Parent/>
   // <Football/>
   // <Goal isGoal={true}/>
+  // <MyCars/>
+  <MyForm/>
 ); 
