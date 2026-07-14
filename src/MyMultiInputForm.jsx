@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createRoot } from "react-dom/client";
 
 function MyMultiInputForm(){
-    const [inputs, setInputs] = useState[{}];
+    const [inputs, setInputs] = useState({});
 
     const handleChange = (e) => {
         const name = e.target.name;

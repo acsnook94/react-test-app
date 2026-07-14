@@ -121,12 +121,29 @@
 
 // export default App
 
+import '@vitejs/plugin-react/preamble';
+import { lazy, Suspense } from 'react';
+import Header from './Header';
+import Sidebar from './Sidebar';
+import Content from './Content';
 
+//will allow object to load slowly enough to see <Suspense> fallback msg
+const Header = lazy(()=>import('./Header'));
+const Sidebar = lazy(()=>import('./Sidebar'));
+const Content = lazy(()=>import('./Content'));
 
 function App(){
   return(
     <div className="App">
       <h1>Hello World!!!</h1>
+
+      <Suspense fallback={<div>Loading.....</div>}>
+        <Header/>
+        <div style={{display: 'flex'}}>
+          <Sidebar/>
+          <Content/>
+        </div>
+      </Suspense>
     </div>
   );
 }

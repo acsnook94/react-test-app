@@ -1,7 +1,7 @@
 // import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 // import './index.css'
-// import App from './App.jsx'
+import App from './App.jsx'
 
 // createRoot(document.getElementById('root')).render(
 //   <StrictMode>
@@ -18,6 +18,10 @@ import { Goal } from './goals.jsx';
 import MyForm from './MyForm.jsx';
 import { ModalTestPage } from './PortalModal.jsx';
 import { BtnTestPage } from './PortalButton.jsx';
+import MyCarForm from './MyCarForm.jsx';
+import MyCheckboxForm from './MyCheckboxForm.jsx';
+import MyMultiInputForm from './MyMultiInputForm.jsx';
+import MyRadioForm from './MyRadioForm.jsx';
 
 
 // const myelement = (
@@ -125,5 +129,10 @@ createRoot(document.getElementById('root')).render(
   // <MyCars/>
   // <MyForm/>
   // <ModalTestPage/>
-  <BtnTestPage/>
+  // <BtnTestPage/>
+  // <MyCarForm/>
+  // <MyCheckboxForm/>
+  // <MyMultiInputForm/>
+  // <MyRadioForm/>
+  <App/>
 ); 

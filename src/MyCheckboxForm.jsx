@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
 
-function MyCheckboxForm() {
+export default function MyCheckboxForm() {
     const [inputs, setInputs] = useState({});
 
     function handleChange(e){

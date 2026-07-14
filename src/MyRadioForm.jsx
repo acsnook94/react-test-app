@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
 
-function myRadioForm(){
+export default function MyRadioForm(){
     const [selectedFruit, setSelectedFruit] = useState('banana');
 
     const handleChange = (e) => {
