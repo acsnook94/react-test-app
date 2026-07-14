@@ -124,7 +124,9 @@
 import '@vitejs/plugin-react/preamble';
 import { lazy, Suspense } from 'react';
 import Car from './Car';
-import styles from './Button.module.css';
+import btnStyles from './Button.module.css';
+import hStyles from './BlueHeader.module.css';
+import myStyles from './my-style.module.css';
 // import Header from './Header';
 // import Sidebar from './Sidebar';
 // import Content from './Content';
@@ -137,7 +139,7 @@ const Content = lazy(()=>import('./Content'));
 function App(){
   return(
     <div className="App">
-      <h1>Hello World!!!</h1>
+      <h1 className='myheader'>myheader Hello World!!!</h1>
 
       <Suspense fallback={<div>Loading.....</div>}>
         <Header/>
@@ -150,12 +152,18 @@ function App(){
       <Car/>
       <br/>
 
-      <button className={`${styles.mybutton} ${styles.primary}`}>
+      {/* <button className={`${btnStyles.mybutton} ${btnStyles.primary}`}> */}
+      <button className={`${btnStyles.primary}`}>
         My Primary Button
       </button>
-      <button className={`${styles.mybutton} ${styles.secondary}`}>
+      {/* <button className={`${btnStyles.mybutton} ${btnStyles.secondary}`}> */}
+      <button className={`${btnStyles.secondary}`}>
         My Secondary Button
       </button>
+
+      <p className={myStyles.myparagraph}>
+        My Paragraph
+      </p>
     </div>
   );
 }
