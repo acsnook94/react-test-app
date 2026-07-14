@@ -123,9 +123,11 @@
 
 import '@vitejs/plugin-react/preamble';
 import { lazy, Suspense } from 'react';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Content from './Content';
+import Car from './Car';
+import styles from './Button.module.css';
+// import Header from './Header';
+// import Sidebar from './Sidebar';
+// import Content from './Content';
 
 //will allow object to load slowly enough to see <Suspense> fallback msg
 const Header = lazy(()=>import('./Header'));
@@ -144,6 +146,16 @@ function App(){
           <Content/>
         </div>
       </Suspense>
+
+      <Car/>
+      <br/>
+
+      <button className={`${styles.mybutton} ${styles.primary}`}>
+        My Primary Button
+      </button>
+      <button className={`${styles.mybutton} ${styles.secondary}`}>
+        My Secondary Button
+      </button>
     </div>
   );
 }
