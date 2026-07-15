@@ -123,10 +123,13 @@
 
 import '@vitejs/plugin-react/preamble';
 import { lazy, Suspense } from 'react';
-import Car from './Car';
+import styled, { createGlobalStyle } from 'styled-components';
+
 import btnStyles from './Button.module.css';
 import hStyles from './BlueHeader.module.css';
 import myStyles from './my-style.module.css';
+
+import Car from './Car';
 // import Header from './Header';
 // import Sidebar from './Sidebar';
 // import Content from './Content';
@@ -136,11 +139,61 @@ const Header = lazy(()=>import('./Header'));
 const Sidebar = lazy(()=>import('./Sidebar'));
 const Content = lazy(()=>import('./Content'));
 
+const MyHeader = styled.h1`
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+`;
+
+const Button = styled.button`
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: ${props => props.btntype === 'primary' ? '#007bff' : '#6c757d'};
+  color: white;
+  cursor: pointer;
+`;
+
+const PrimaryButton = styled(Button)`
+  background-color: #007bff;
+`;
+
+const SuccessButton = styled(Button)`
+  background-color: #28a745;
+`;
+
+const GlobalStyle = createGlobalStyle`
+  h1{
+    color: white;
+    background-color: purple;
+    font-family: helvetica; //, sans-serif;
+  }
+
+  .myparagraph{
+    font-family: courier, monospace;
+    color: blue;
+  }
+`;
+
+
 function App(){
   return(
     <div className="App">
+      <GlobalStyle/>
+      <MyHeader>Welcome!</MyHeader>
       <h1 className='myheader'>myheader Hello World!!!</h1>
 
+      <Button btntype='primary'>Primary Button</Button>
+      <br/>
+      <br/>
+      <Button>Secondary Button</Button>
+      <br/>
+
+      <div>
+        <PrimaryButton>Primary</PrimaryButton>
+        <SuccessButton>Success</SuccessButton>
+      </div>
+      
       <Suspense fallback={<div>Loading.....</div>}>
         <Header/>
         <div style={{display: 'flex'}}>
@@ -163,6 +216,10 @@ function App(){
 
       <p className={myStyles.myparagraph}>
         My Paragraph
+      </p>
+
+      <p className='myparagraph'>
+        My Paragraph (from global style)
       </p>
     </div>
   );
