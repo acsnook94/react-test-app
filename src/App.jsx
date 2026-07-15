@@ -130,7 +130,10 @@ import hStyles from './BlueHeader.module.css';
 import myStyles from './my-style.module.css';
 
 import Car from './Car';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Home from './views/Home';
+import About from './views/About';
+import Contact from './views/Contact';
 // import Header from './Header';
 // import Sidebar from './Sidebar';
 // import Content from './Content';
@@ -181,14 +184,28 @@ function App(){
   return(
     <BrowserRouter>
       <div className="App">
+        {/* Navigation */}
+        <nav>
+          <Link to='/'>Home</Link> |{''}
+          <Link to='/about'>About</Link> | {''}
+          <Link to='/contact'>Contact</Link>
+        </nav>
+
+        {/* Routes */}
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/contact' element={<Contact/>} />
+        </Routes>
+
         <GlobalStyle/>
         <MyHeader>Welcome!</MyHeader>
         <h1 className='myheader'>myheader Hello World!!!</h1>
 
         <Button btntype='primary'>Primary Button</Button>
         <br/>
-        <br/>
         <Button>Secondary Button</Button>
+        <br/>
         <br/>
 
         <div>
