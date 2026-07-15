@@ -135,8 +135,9 @@ import Home from './views/Home';
 import About from './views/About';
 import Contact from './views/Contact';
 import Products from './views/Products';
-import CarProducts from './CarProducts';
-import BikeProducts from './BikeProducts';
+import CarProducts from './views/CarProducts';
+import BikeProducts from './views/BikeProducts';
+import Info from './views/Info';
 // import Header from './Header';
 // import Sidebar from './Sidebar';
 // import Content from './Content';
@@ -183,7 +184,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 
-
 function App(){
   return(
     <BrowserRouter>
@@ -200,6 +200,12 @@ function App(){
           <NavLink to='/about'>About</NavLink> | {' '}
           <NavLink to='/products'>Products</NavLink> |{' '}
           <NavLink to='/contact'>Contact</NavLink>
+          <br/>
+          
+          Customers:
+          <Link to='/customer/Emil'> Emil</Link> |
+          <Link to='/customer/Tobias'>Tobias</Link> |
+          <Link to='/customer/Linus'>Linus</Link>
         </nav>
 
         {/* Routes */}
@@ -211,6 +217,7 @@ function App(){
             <Route path='bike' element={<BikeProducts/>} />   
           </Route>
           <Route path='/contact' element={<Contact/>} />
+          <Route path='/customer/:firstName' element={<Info/>} />
         </Routes>
 
         <GlobalStyle/>
