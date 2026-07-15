@@ -130,7 +130,7 @@ import hStyles from './BlueHeader.module.css';
 import myStyles from './my-style.module.css';
 
 import Car from './Car';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
 import Home from './views/Home';
 import About from './views/About';
 import Contact from './views/Contact';
@@ -183,16 +183,23 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 
+
 function App(){
   return(
     <BrowserRouter>
       <div className="App">
         {/* Navigation */}
         <nav>
-          <Link to='/'>Home</Link> |{' '}
+          {/* <Link to='/'>Home</Link> |{' '}
           <Link to='/about'>About</Link> | {' '}
           <Link to='/products'>Products</Link> |{' '}
-          <Link to='/contact'>Contact</Link>
+          <Link to='/contact'>Contact</Link> */}
+
+          {/* Navigation with NavLink for active styling */}
+          <NavLink to='/'>Home</NavLink> |{' '}
+          <NavLink to='/about'>About</NavLink> | {' '}
+          <NavLink to='/products'>Products</NavLink> |{' '}
+          <NavLink to='/contact'>Contact</NavLink>
         </nav>
 
         {/* Routes */}
