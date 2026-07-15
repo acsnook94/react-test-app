@@ -134,6 +134,9 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './views/Home';
 import About from './views/About';
 import Contact from './views/Contact';
+import Products from './views/Products';
+import CarProducts from './CarProducts';
+import BikeProducts from './BikeProducts';
 // import Header from './Header';
 // import Sidebar from './Sidebar';
 // import Content from './Content';
@@ -186,8 +189,9 @@ function App(){
       <div className="App">
         {/* Navigation */}
         <nav>
-          <Link to='/'>Home</Link> |{''}
-          <Link to='/about'>About</Link> | {''}
+          <Link to='/'>Home</Link> |{' '}
+          <Link to='/about'>About</Link> | {' '}
+          <Link to='/products'>Products</Link> |{' '}
           <Link to='/contact'>Contact</Link>
         </nav>
 
@@ -195,6 +199,10 @@ function App(){
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/about' element={<About/>} />
+          <Route path='/products' element={<Products/>} >
+            <Route path='car' element={<CarProducts/>} />
+            <Route path='bike' element={<BikeProducts/>} />   
+          </Route>
           <Route path='/contact' element={<Contact/>} />
         </Routes>
 

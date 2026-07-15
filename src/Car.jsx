@@ -42,7 +42,8 @@ import React from "react";
 // function Car({color, brand}){ //param destructuring
 function Car({color/*="white"*/, brand, ...others}){ //param destructure with default color value set, indeterminate # of params
     // const {color, brand} = props; //destructure to get only desired props
-    const brandLine = `My brand is ${brand}. My make is ${others.make} and my model name is ${others.model}.`;
+    // const brandLine = `My brand is ${brand}. My make is ${others.make} 7and my model name is ${others.model}.`;
+    const brandLine = `My brand is ${brand == null ? 'UNDEFINED' : brand}. My make is ${others.make == null ? 'UNDEFINED' : others.make} and my model name is ${others.model == null ? 'UNDEFINED' : others.model}.`;
 
     return(
         <>
