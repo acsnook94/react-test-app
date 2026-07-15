@@ -130,6 +130,7 @@ import hStyles from './BlueHeader.module.css';
 import myStyles from './my-style.module.css';
 
 import Car from './Car';
+import { BrowserRouter } from 'react-router-dom';
 // import Header from './Header';
 // import Sidebar from './Sidebar';
 // import Content from './Content';
@@ -178,50 +179,52 @@ const GlobalStyle = createGlobalStyle`
 
 function App(){
   return(
-    <div className="App">
-      <GlobalStyle/>
-      <MyHeader>Welcome!</MyHeader>
-      <h1 className='myheader'>myheader Hello World!!!</h1>
+    <BrowserRouter>
+      <div className="App">
+        <GlobalStyle/>
+        <MyHeader>Welcome!</MyHeader>
+        <h1 className='myheader'>myheader Hello World!!!</h1>
 
-      <Button btntype='primary'>Primary Button</Button>
-      <br/>
-      <br/>
-      <Button>Secondary Button</Button>
-      <br/>
+        <Button btntype='primary'>Primary Button</Button>
+        <br/>
+        <br/>
+        <Button>Secondary Button</Button>
+        <br/>
 
-      <div>
-        <PrimaryButton>Primary</PrimaryButton>
-        <SuccessButton>Success</SuccessButton>
-      </div>
-      
-      <Suspense fallback={<div>Loading.....</div>}>
-        <Header/>
-        <div style={{display: 'flex'}}>
-          <Sidebar/>
-          <Content/>
+        <div>
+          <PrimaryButton>Primary</PrimaryButton>
+          <SuccessButton>Success</SuccessButton>
         </div>
-      </Suspense>
+        
+        <Suspense fallback={<div>Loading.....</div>}>
+          <Header/>
+          <div style={{display: 'flex'}}>
+            <Sidebar/>
+            <Content/>
+          </div>
+        </Suspense>
 
-      <Car/>
-      <br/>
+        <Car/>
+        <br/>
 
-      {/* <button className={`${btnStyles.mybutton} ${btnStyles.primary}`}> */}
-      <button className={`${btnStyles.primary}`}>
-        My Primary Button
-      </button>
-      {/* <button className={`${btnStyles.mybutton} ${btnStyles.secondary}`}> */}
-      <button className={`${btnStyles.secondary}`}>
-        My Secondary Button
-      </button>
+        {/* <button className={`${btnStyles.mybutton} ${btnStyles.primary}`}> */}
+        <button className={`${btnStyles.primary}`}>
+          My Primary Button
+        </button>
+        {/* <button className={`${btnStyles.mybutton} ${btnStyles.secondary}`}> */}
+        <button className={`${btnStyles.secondary}`}>
+          My Secondary Button
+        </button>
 
-      <p className={myStyles.myparagraph}>
-        My Paragraph
-      </p>
+        <p className={myStyles.myparagraph}>
+          My Paragraph
+        </p>
 
-      <p className='myparagraph'>
-        My Paragraph (from global style)
-      </p>
-    </div>
+        <p className='myparagraph'>
+          My Paragraph (from global style)
+        </p>
+      </div>
+    </BrowserRouter>
   );
 }
 
