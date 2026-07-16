@@ -122,7 +122,7 @@
 // export default App
 
 import '@vitejs/plugin-react/preamble';
-import { lazy, Suspense } from 'react';
+import { forwardRef, lazy, Suspense, useRef } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import btnStyles from './Button.module.css';
@@ -138,6 +138,7 @@ import Products from './views/Products';
 import CarProducts from './views/CarProducts';
 import BikeProducts from './views/BikeProducts';
 import Info from './views/Info';
+import Greeting from './Greeting';
 // import Header from './Header';
 // import Sidebar from './Sidebar';
 // import Content from './Content';
@@ -149,6 +150,7 @@ const Content = lazy(()=>import('./Content'));
 
 const MyHeader = styled.h1`
   padding: 10px 20px;
+
   background-color: #007bff;
   color: white;
 `;
@@ -183,8 +185,33 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const MyInput = forwardRef((props, ref) => (
+  <input ref={ref} {...props} />
+));
+
+// This is our HOC - it adds a border to any component// This is our HOC - it adds a border to any component
+function withBorder(WrappedComponent){
+  return function NewComponet(props){
+    return(
+      <div style={{border: '2px solid blue', padding: '10px'}}>
+        <WrappedComponent {...props}></WrappedComponent>
+      </div>
+    );
+  }
+}
+
+//Create a new compoent with border
+const GreetingWithBorder = withBorder(Greeting);
+// const GreetingWithBorder = withBorder(<Greeting/>);
+
 
 function App(){
+  const inputRef = useRef();
+
+  const focusInput = () => {
+    inputRef.current.focus();
+  }
+
   return(
     <BrowserRouter>
       <div className="App">
@@ -205,7 +232,8 @@ function App(){
           Customers:
           <Link to='/customer/Emil'> Emil</Link> |
           <Link to='/customer/Tobias'>Tobias</Link> |
-          <Link to='/customer/Linus'>Linus</Link>
+          <Link to='/customer/Linus'>Linus</Link> |
+          <Link to='/customer/Drew'>Drew</Link>
         </nav>
 
         {/* Routes */}
@@ -223,6 +251,9 @@ function App(){
         <GlobalStyle/>
         <MyHeader>Welcome!</MyHeader>
         <h1 className='myheader'>myheader Hello World!!!</h1>
+
+        <MyInput ref={inputRef} placeholder='Type here...' />
+        <Button onClick={focusInput}>Focus Input</Button>
 
         <Button btntype='primary'>Primary Button</Button>
         <br/>
@@ -260,8 +291,11 @@ function App(){
         </p>
 
         <p className='myparagraph'>
-          My Paragraph (from global style)
+          My Paragraph (with global style)
         </p>
+
+        <Greeting name='Drew'/>
+        <GreetingWithBorder name='Katie'/>
       </div>
     </BrowserRouter>
   );

@@ -5,3 +5,4 @@ export default function Info(){
     const {firstName} = useParams();
     return <h1>Hello, {firstName}!</h1>;
 }
+ 
