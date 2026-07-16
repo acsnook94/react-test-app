@@ -125,9 +125,9 @@ import '@vitejs/plugin-react/preamble';
 import { forwardRef, lazy, Suspense, useRef } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import btnStyles from './Button.module.css';
-import hStyles from './BlueHeader.module.css';
-import myStyles from './my-style.module.css';
+import btnStyles from './styles/Button.module.css';
+import hStyles from './styles/BlueHeader.module.css';
+import myStyles from './styles/my-style.module.css';
 
 import Car from './Car';
 import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
