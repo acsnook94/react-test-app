@@ -144,9 +144,9 @@ import Greeting from './Greeting';
 // import Content from './Content';
 
 //will allow object to load slowly enough to see <Suspense> fallback msg
-const Header = lazy(()=>import('./Header'));
-const Sidebar = lazy(()=>import('./Sidebar'));
-const Content = lazy(()=>import('./Content'));
+const Header = lazy(() => import('./Header'));
+const Sidebar = lazy(() => import('./Sidebar'));
+const Content = lazy(() => import('./Content'));
 
 const MyHeader = styled.h1`
   padding: 10px 20px;
@@ -190,10 +190,10 @@ const MyInput = forwardRef((props, ref) => (
 ));
 
 // This is our HOC - it adds a border to any component// This is our HOC - it adds a border to any component
-function withBorder(WrappedComponent){
-  return function NewComponet(props){
-    return(
-      <div style={{border: '2px solid blue', padding: '10px'}}>
+function withBorder(WrappedComponent) {
+  return function NewComponet(props) {
+    return (
+      <div style={{ border: '2px solid blue', padding: '10px' }}>
         <WrappedComponent {...props}></WrappedComponent>
       </div>
     );
@@ -205,14 +205,14 @@ const GreetingWithBorder = withBorder(Greeting);
 // const GreetingWithBorder = withBorder(<Greeting/>);
 
 
-function App(){
+function App() {
   const inputRef = useRef();
 
   const focusInput = () => {
     inputRef.current.focus();
   }
 
-  return(
+  return (
     <BrowserRouter>
       <div className="App">
         {/* Navigation */}
@@ -227,8 +227,8 @@ function App(){
           <NavLink to='/about'>About</NavLink> | {' '}
           <NavLink to='/products'>Products</NavLink> |{' '}
           <NavLink to='/contact'>Contact</NavLink>
-          <br/>
-          
+          <br />
+
           Customers:
           <Link to='/customer/Emil'> Emil</Link> |
           <Link to='/customer/Tobias'>Tobias</Link> |
@@ -238,17 +238,17 @@ function App(){
 
         {/* Routes */}
         <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/about' element={<About/>} />
-          <Route path='/products' element={<Products/>} >
-            <Route path='car' element={<CarProducts/>} />
-            <Route path='bike' element={<BikeProducts/>} />   
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/products' element={<Products />} >
+            <Route path='car' element={<CarProducts />} />
+            <Route path='bike' element={<BikeProducts />} />
           </Route>
-          <Route path='/contact' element={<Contact/>} />
-          <Route path='/customer/:firstName' element={<Info/>} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/customer/:firstName' element={<Info />} />
         </Routes>
 
-        <GlobalStyle/>
+        <GlobalStyle />
         <MyHeader>Welcome!</MyHeader>
         <h1 className='myheader'>myheader Hello World!!!</h1>
 
@@ -256,26 +256,26 @@ function App(){
         <Button onClick={focusInput}>Focus Input</Button>
 
         <Button btntype='primary'>Primary Button</Button>
-        <br/>
+        <br />
         <Button>Secondary Button</Button>
-        <br/>
-        <br/>
+        <br />
+        <br />
 
         <div>
           <PrimaryButton>Primary</PrimaryButton>
           <SuccessButton>Success</SuccessButton>
         </div>
-        
+
         <Suspense fallback={<div>Loading.....</div>}>
-          <Header/>
-          <div style={{display: 'flex'}}>
-            <Sidebar/>
-            <Content/>
+          <Header />
+          <div style={{ display: 'flex' }}>
+            <Sidebar />
+            <Content />
           </div>
         </Suspense>
 
-        <Car/>
-        <br/>
+        <Car />
+        <br />
 
         {/* <button className={`${btnStyles.mybutton} ${btnStyles.primary}`}> */}
         <button className={`${btnStyles.primary}`}>
@@ -294,8 +294,8 @@ function App(){
           My Paragraph (with global style)
         </p>
 
-        <Greeting name='Drew'/>
-        <GreetingWithBorder name='Katie'/>
+        <Greeting name='Drew' />
+        <GreetingWithBorder name='Katie' />
       </div>
     </BrowserRouter>
   );

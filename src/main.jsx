@@ -4,12 +4,6 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './styles/MyStyle.scss';
 
-// createRoot(document.getElementById('root')).render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>,
-// )
-
 import '@vitejs/plugin-react/preamble';
 import Car from './Car.jsx';
 import Garage from './Garage.jsx';
@@ -23,74 +17,7 @@ import MyCarForm from './MyCarForm.jsx';
 import MyCheckboxForm from './MyCheckboxForm.jsx';
 import MyMultiInputForm from './MyMultiInputForm.jsx';
 import MyRadioForm from './MyRadioForm.jsx';
-
-
-// const myelement = (
-//   <table>
-//     <tbody>
-//       <tr>
-//         <th>Name</th>
-//       </tr>
-//       <tr>
-//         <td>John</td>
-//       </tr>
-//       <tr>
-//         <td>Elsa</td>
-//       </tr>
-//     </tbody>
-//   </table>
-// );
-
-// const str = "JSX";
-// const myElement = <h1>I Like JSX!</h1>;
-// const myElement = <h1>I Like {str}!</h1>;
-
-
-// const myElement = (
-//   <>
-//     <p>I am a paragraph.</p>
-//     <p>I am a paragraph too.</p>
-//   </>
-// );
-
-
-// const myElement2 = <p className='uselessClass'>This is MyElement2</p>;
-
-
-// class Car {
-//   constructor(name) {
-//     this.brand = name;
-//   }
-
-//   present(){
-//     return 'I have a ' + this.brand;
-//   }
-// }
-
-
-// class Model extends Car{
-//   constructor(name,mod){
-//     super(name);
-//     this.Model=mod;
-//   }
-//   show(){
-//     return this.present() + ', it is a ' + this.Model;
-//   }
-// }
-
-
-// const myCar = new Car("Chevrolet");
-// myCar.present();
-// const myCarModel = new Model("Ford", "Mustang");
-// myCarModel.show();
-
-
-// function Car(){
-//   return(
-//     <h2>Hi, I am a Car!</h2>
-//   )
-// }
-
+import Timer from './Timer.jsx';
 
 function MyCars(){
   // const cars = ['Ford', 'BMW', 'Audi'];
@@ -124,13 +51,15 @@ function MyHeader(){
   );
 }
 
+// createRoot(document.getElementById('root')).render(
+//   <StrictMode>
+//     <App />
+//   </StrictMode>,
+// )
 
 createRoot(document.getElementById('root')).render(
   // <h1>Hello React!</h1>
   // <p>Welcome!!</p>
-  // myelement
-  // myElement
-  // myElement2
   // <Car />
   // <Car color="blue" />
   // <Garage />
@@ -145,6 +74,7 @@ createRoot(document.getElementById('root')).render(
   // <MyCheckboxForm/>
   // <MyMultiInputForm/>
   // <MyRadioForm/>
-  <App/>
   // <MyHeader></MyHeader>
+<Timer/>
+  // <App/>
 ); 
