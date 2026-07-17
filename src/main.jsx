@@ -18,6 +18,7 @@ import MyCheckboxForm from './MyCheckboxForm.jsx';
 import MyMultiInputForm from './MyMultiInputForm.jsx';
 import MyRadioForm from './MyRadioForm.jsx';
 import Timer from './Timer.jsx';
+import Counter from './Counter.jsx';
 
 function MyCars(){
   // const cars = ['Ford', 'BMW', 'Audi'];
@@ -75,6 +76,7 @@ createRoot(document.getElementById('root')).render(
   // <MyMultiInputForm/>
   // <MyRadioForm/>
   // <MyHeader></MyHeader>
-<Timer/>
+  //<Timer/>
+  <Counter/>
   // <App/>
 ); 
