@@ -3,10 +3,18 @@ import { useEffect, useState } from "react";
 export default function Timer(){
     const [count, setCount] = useState(0);
 
+    // useEffect(()=>{
+    //     setTimeout(() => {
+    //        setCount((count)=>count + 1); 
+    //     }, 1000);
+    // }, []);     //including empty [] arg causes effect to run on first render only
+
     useEffect(()=>{
-        setTimeout(() => {
+        let  timer = setTimeout(() => {
            setCount((count)=>count + 1); 
         }, 1000);
+
+        return ()=>clearTimeout(timer);
     }, []);     //including empty [] arg causes effect to run on first render only
 
     // useEffect(()=>{

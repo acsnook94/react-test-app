@@ -1,4 +1,5 @@
 // import { StrictMode } from 'react'
+import { createContext } from 'react';
 import { createRoot } from 'react-dom/client'
 // import './index.css'
 import App from './App.jsx'
@@ -19,6 +20,8 @@ import MyMultiInputForm from './MyMultiInputForm.jsx';
 import MyRadioForm from './MyRadioForm.jsx';
 import Timer from './Timer.jsx';
 import Counter from './Counter.jsx';
+// import Component1 from './Component1.jsx';
+import Component1 from './Component.jsx';
 
 function MyCars(){
   // const cars = ['Ford', 'BMW', 'Audi'];
@@ -58,6 +61,8 @@ function MyHeader(){
 //   </StrictMode>,
 // )
 
+// const UserContext = createContext();
+
 createRoot(document.getElementById('root')).render(
   // <h1>Hello React!</h1>
   // <p>Welcome!!</p>
@@ -77,6 +82,7 @@ createRoot(document.getElementById('root')).render(
   // <MyRadioForm/>
   // <MyHeader></MyHeader>
   //<Timer/>
-  <Counter/>
-  // <App/>
+  // <Counter/>
+  // <Component1/>
+  <App/>
 ); 

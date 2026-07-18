@@ -122,7 +122,7 @@
 // export default App
 
 import '@vitejs/plugin-react/preamble';
-import { forwardRef, lazy, Suspense, useRef } from 'react';
+import { forwardRef, lazy, Suspense, useEffect, useReducer, useRef, useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import btnStyles from './styles/Button.module.css';
@@ -206,11 +206,22 @@ const GreetingWithBorder = withBorder(Greeting);
 
 
 function App() {
-  const inputRef = useRef();
+  const [inputValue, setInputValue] = useState('');
+  const rendCount = useRef(0);  //render count
+  const previousInputValue = useRef(''); //useRef(null);
 
+  const focusableInputRef = useRef();
   const focusInput = () => {
-    inputRef.current.focus();
+    focusableInputRef.current.focus();
   }
+
+  useEffect(()=>{
+    rendCount.current = rendCount.current+1;
+  });
+
+  useEffect(()=>{
+    previousInputValue.current = inputValue;
+  }, [inputValue]);
 
   return (
     <BrowserRouter>
@@ -252,8 +263,20 @@ function App() {
         <MyHeader>Welcome!</MyHeader>
         <h1 className='myheader'>myheader Hello World!!!</h1>
 
-        <MyInput ref={inputRef} placeholder='Type here...' />
-        <Button onClick={focusInput}>Focus Input</Button>
+        <MyInput ref={focusableInputRef} placeholder='Type here...' />
+        <Button onClick={focusInput}>Focus Input</Button> 
+        
+        <>
+          <p>Type in the input field:</p>
+          <input
+            type='text'
+            value={inputValue}
+            onChange={(e)=>setInputValue(e.target.value)}
+          />
+          <h1>Render Count: {rendCount.current}</h1>
+          <h2>Current Value: {inputValue}</h2>
+          <h2>Previous Value: {previousInputValue.current}</h2>
+        </>
 
         <Button btntype='primary'>Primary Button</Button>
         <br />
