@@ -22,6 +22,8 @@ import Timer from './Timer.jsx';
 import Counter from './Counter.jsx';
 // import Component1 from './Component1.jsx';
 import Component1 from './Component.jsx';
+import { WithCallbackExample } from './WithCallbackExample.jsx';
+import { WithoutCallbackExample } from './WithoutCallbackExample.jsx';
 
 function MyCars(){
   // const cars = ['Ford', 'BMW', 'Audi'];
@@ -85,4 +87,6 @@ createRoot(document.getElementById('root')).render(
   // <Counter/>
   // <Component1/>
   <App/>
+  // <WithCallbackExample/>
+  // <WithoutCallbackExample/>
 ); 
